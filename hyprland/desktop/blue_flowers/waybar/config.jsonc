@@ -1,0 +1,31 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "spacing": 2, // Gaps between modules (2px)
+    // Choose the order of the modules
+    "output": "DP-3",
+    "modules-left": [
+        "custom/arch",
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "tray",
+        "mpris",
+        "pulseaudio",
+        "network",
+        "cpu",
+        "memory",
+//        "temperature",
+//        "battery",
+//        "battery#bat2",
+        "clock"
+    ],
+
+    "include": [
+		"~/.config/waybar/modules.json"
+    ]
+}

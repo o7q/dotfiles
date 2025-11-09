@@ -1,0 +1,103 @@
+{
+    "custom/arch": {
+        "format": "󰣇",
+        "on-click": "rofi -show drun"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "urgent": "",
+            "active": "",
+            "default": ""
+        }
+    },
+    "hyprland/window": {
+	"max-length": 50
+    },
+    "tray": {
+        "spacing": 4,
+        "icon-size": 18
+    },
+    "mpris": {
+        "format": " {status_icon}  {dynamic}  ",
+        "interval": 1,
+        "dynamic-len": 25,
+        "status-icons": {
+            "playing": "⏸",
+            "paused": "▶",
+            "stopped": ""
+        },
+        "dynamic-order": ["artist", "title"],
+        "tooltip": false
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname} 󰈀",
+        "tooltip-format": "{ifname} via {gwaddr} - {ipaddr}/{cidr} 󰈀",
+        "format-linked": "{ifname} (No IP) 󰈀",
+        "format-disconnected": "Disconnected ⚠",
+	"on-click": "kitty nmtui",
+	"interval": 1
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+	"interval": 1,
+	"on-click": "kitty btop"
+    },
+    "memory": {
+        "format": "  {}%",
+	"tooltip": true,
+	"interval": 1,
+	"on-click": "kitty btop"
+    },
+//    "temperature": {
+//        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+//        "critical-threshold": 150,
+//        "format-critical": " {temperatureF}°F",
+//        "format": " {temperatureF}°F",
+//        "tooltip": false,
+//	"interval": 1,
+//    },
+//    "battery": {
+//        "states": {
+//            "warning": 30,
+//            "critical": 15
+//        },
+//        "format": "{icon}  {capacity}%",
+//        "format-full": "{icon}  {capacity}%",
+//        "format-charging": "  {capacity}%",
+//        "format-plugged": "  {capacity}%",
+//        "format-alt": "{time}  {icon}",
+//        "format-icons": ["", "", "", "", ""]
+//    },
+//    "battery#bat2": {
+//        "bat": "BAT2"
+//    },
+    "clock": {
+        "format": "{:%I:%M   %e %B} ",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+
+}
