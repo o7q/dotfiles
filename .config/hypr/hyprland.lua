@@ -25,6 +25,7 @@ hl.monitor({
     disabled = true,
 })
 
+
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -155,6 +156,7 @@ hl.config({
         fullscreen_on_one_column = true,
     },
 })
+
 
 ----------------
 ----  MISC  ----
