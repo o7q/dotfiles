@@ -25,7 +25,6 @@ hl.monitor({
     disabled = true,
 })
 
-
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -120,8 +119,8 @@ hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dam
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  spring = "easy",         style = "popin 87%" })
+hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, bezier = "easeOutQuint" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 4.1,  bezier = "easeOutQuint", style = "popin 87%" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "linear",       style = "popin 87%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.73, bezier = "almostLinear" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.46, bezier = "almostLinear" })
@@ -214,13 +213,13 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("thunar"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("fsearch"))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + D", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))    -- dwindle only
+hl.bind(mainMod .. " + S", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("hyprshutdown"))
 
 hl.bind(mainMod .. " + COMMA", hl.dsp.exec_cmd("systemctl suspend"))
-hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd("systemctl poweroff"))
-hl.bind(mainMod .. " + SLASH", hl.dsp.exec_cmd("systemctl reboot"))
+hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl poweroff'"))
+hl.bind(mainMod .. " + SLASH", hl.dsp.exec_cmd("hyprshutdown -p 'systemctl reboot'"))
 hl.bind(mainMod .. " + SEMICOLON", hl.dsp.exec_cmd("hyprctl hyprsunset temperature 2000"))
 hl.bind(mainMod .. " + APOSTROPHE", hl.dsp.exec_cmd("hyprctl hyprsunset identity"))
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("wayscriber --active"))
